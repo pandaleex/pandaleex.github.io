@@ -1,0 +1,18 @@
+.pokemonList {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 300px 300px;
+    grid-gap: 20px;
+    width: 80%;
+    justify-content: center;
+  }
+
+.pokemon--big, .pokemon--mid, .pokemon--small {
+    background-color: bisque;
+    padding: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.pokemon--big, .pokemon--small {
+    background-color: gold;
+}
