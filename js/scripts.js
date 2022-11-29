@@ -47,10 +47,12 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     console.log(pokemon);
   }
+
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 
