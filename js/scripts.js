@@ -66,6 +66,7 @@ let pokemonRepository = (function () {
       console.log(pokemon);
     });
   }
+
   return {
     add: add,
     getAll: getAll,
@@ -73,6 +74,7 @@ let pokemonRepository = (function () {
     showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
+
   };
 })();
 
