@@ -1,5 +1,5 @@
 let pokemonRepository = (function () {
-  let pokemonList = [
+  let repository = [
     {
       name: "Bulbasaur",
       height: 0.7,
@@ -18,55 +18,48 @@ let pokemonRepository = (function () {
   ];
 
   function add(pokemon) {
-    return pokemonList.push(pokemon);
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
   }
-
   function getAll() {
-    return pokemonList;
+    return repository;
+  }
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    });
+  }
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 
-pokemonRepository.add({ name: "Charmander", height: 2, type: ["fire"] });
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
-let pokemonList = pokemonRepository.getAll();
+console.log(pokemonRepository.getAll());
 
-//Using HTML within JavaScript so styling can be applied
-document.write('<div class="pokemonList">');
-//A forEach() loop which states a Pokemon's name and weight
-pokemonList.forEach(function (pokemon) {
-  if (pokemon.height > 1.5) {
-    document.write('<div class="pokemon--big">');
-    document.write(
-      "<p>" +
-        pokemon.name +
-        ", height: " +
-        pokemon.height +
-        " - Wow, that's giant!" +
-        "</p>"
-    );
-  } 
-  else if (pokemon.height < 1) {
-    document.write('<div class="pokemon--small">');
-    document.write(
-      "<p>" +
-        pokemon.name +
-        ", height: " +
-        pokemon.height +
-        " - Aww, that's tiny!!" +
-        "</p>"
-    );
-  } 
-  else {
-    document.write('<div class="pokemon--mid">');
-    document.write(
-      "<p>" + pokemon.name + ", height: " + pokemon.height + "</p>"
-    );
-  }
-  document.write("</div>");
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
-document.write("</div>"); //Ends div element for pokemonList grid
