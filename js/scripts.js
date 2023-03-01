@@ -13,17 +13,16 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("li");
-    let button = document.createElement("button");
-    button.innerText = pokemon.name;
-    button.classList.add("button-class");
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
-    button.addEventListener("click", function () {
+    let pokemonList = $(".pokemon-list");
+    let listItem = $('<li class="group-list-item"></li>');
+    let button = $('<button class="pokemon-button btn btn-warning" data target="#modal-container" data-toggle="modal">' + pokemon.name + '</button>');
+    listItem.append(button);
+    pokemonList.append(listItem);
+    button.on("click", function () {
       showDetails(pokemon);
     });
   }
+  
 
   function loadList() {
     return fetch(apiUrl)
@@ -61,7 +60,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  function showDetails(item) {
+  function showDetails(pokemon) {
     pokemonRepository.loadDetails(item).then(function () {
       let modalContainer = document.querySelector("#modal-container");
 
@@ -113,7 +112,7 @@ let pokemonRepository = (function () {
       });
 
       document
-        .querySelector("button.button-class")
+        .querySelector("button.pokemon-button btn btn-warning")
         .addEventListener("click", () => {
           showDetails(pokemon.name, "Modal Content");
         });
