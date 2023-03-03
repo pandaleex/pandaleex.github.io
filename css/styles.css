@@ -1,68 +1,92 @@
-.pokemonList {
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 300px 300px;
-    grid-gap: 20px;
-    width: 80%;
-    justify-content: center;
-  }
+.navbar.navbar-light {
+  font-weight: 600;
+}
+
+.container {
+  text-align: center;
+  box-sizing: border-box;
+  margin: unset;
+  padding: unset;
+  max-width: 100vw;
+}
+
+#pokemonList {
+  display: inline-block;
+  list-style: none;
+  column-count: 3;
+  margin: 0;
+  padding-right: 5vw;
+  width: 90vw;
+}
 
 h1 {
-  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.pokemon--big, .pokemon--mid, .pokemon--small {
-    background-color: bisque;
-    padding: 2em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.pokemon-button.btn.btn-warning {
+  border: none;
+  background-color: gold;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 10px;
+  width: 100%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.pokemon--big, .pokemon--small {
-    background-color: gold;
+#modal-container {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+  text-transform: capitalize;
 }
 
-.pokemon-button {
-    border: none;
-    background-color: gold;
-    padding: 10px;
-    border-radius: 3px;
-    margin: 10px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-}
-
+button,
 .button-class {
-    background-color: orange;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 4px solid orange;
-    border-radius: 15px 15px 15px 15px;
-    text-transform: capitalize;
-  }
+  overflow: hidden;
+  border: none;
+  display: grid;
+  font-family: inherit;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  text-transform: capitalize;
+  background-color: orange;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  cursor: pointer;
+}
 
-  #modal-container {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999; 
-    overflow: auto; 
-    display: grid;
-    text-align: center;
-  }
-  
-  #modal-container.is-visible {
-    /* CSS for modal container - add your own desired CSS styles here */
-    display: block;
-  }
+.modal-header {
+  background-color: #e85467;
+}
+
+.modal-title {
+  text-transform: capitalize;
+}
+
+.modal-body {
+  text-align: center;
+  font-size: large;
+}
+
+.modal-img {
+  width: 50%;
+  height: auto;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-img img {
+  margin: -50%;
+}

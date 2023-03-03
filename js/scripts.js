@@ -67,16 +67,14 @@ let pokemonRepository = (function () {
     modalTitle.empty()
     modalBody.empty()
 
-    let titleElement = document.createElement('h1')
-    titleElement.innerText = pokemon.name;
-
     let contentElement = document.createElement("p");
-    contentElement.innerText = "Height: " + pokemon.height;
+    contentElement.innerText = "Height: " + pokemon.height + "m";
 
-    let imageElement = document.createElement('img');
+    let imageElement = document.createElement("img");
+    imageElement.className = "modal-img"
     imageElement.src = pokemon.imageUrl;
 
-    modalTitle.append(titleElement)
+    modalTitle.append(pokemon.name)
     modalBody.append(contentElement)
     modalBody.append(imageElement)
 })};
