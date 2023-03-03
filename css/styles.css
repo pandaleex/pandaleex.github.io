@@ -7,6 +7,10 @@
     justify-content: center;
   }
 
+h1 {
+  margin-left: 10px;
+}
+
 .pokemon--big, .pokemon--mid, .pokemon--small {
     background-color: bisque;
     padding: 2em;
@@ -22,6 +26,7 @@
     background-color: gold;
     padding: 10px;
     border-radius: 3px;
+    margin: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -55,39 +60,6 @@
     overflow: auto; 
     display: grid;
     text-align: center;
-  }
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    border-radius: 10px;
-  }
-  
-  .modal-close {
-    float: right;
-    border: 0;
-    background: none;
-    color: #777;
-  }
-  
-  .modal h1 {
-    margin-top: 0;
-    text-align: center;
-    text-transform: capitalize;
-  }
-  
-  .modal p {
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  #modal-container {
-    display: none;
   }
   
   #modal-container.is-visible {
